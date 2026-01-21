@@ -528,7 +528,7 @@
               options: {
                 data: { full_name: name },
                 emailRedirectTo:
-                  "https://dhurgesh1.github.io/plate2purposef/logcon", // must match Supabase settings
+                  "https://plate2purpose.com/logcon", // must match Supabase settings
               },
             });
 
@@ -563,7 +563,7 @@
             .send("service_fuudr8t", "template_13rkc9z", {
               user_email: userEmail,
               user_name: userName,
-              confirmation_link: "https://dhurgesh1.github.io/plate2purposef/dashboard",
+              confirmation_link: "https://plate2purpose.com/dashboard",
             })
             .then((res) => {
               alert("Confirmation email sent!");
@@ -620,7 +620,7 @@
         client.auth.signInWithOAuth({
           provider: "google",
           options: {
-            redirectTo: "https://dhurgesh1.github.io/plate2purposef/auth-callback", // ✅ must match
+            redirectTo: "https://plate2purpose.com/auth-callback", // ✅ must match
             queryParams: { prompt: "select_account" },
           },
         });
@@ -632,7 +632,7 @@
         client.auth.signInWithOAuth({
           provider: "azure",
           options: {
-            redirectTo: "http://localhost:5500/auth-callback.html", // ✅ must match
+            redirectTo: "http://plate2purpose.com/auth-callback.html", // ✅ must match
             queryParams: { prompt: "select_account" },
           },
         });
@@ -688,7 +688,7 @@
         }
 
         const { data, error } = await client.auth.resetPasswordForEmail(email, {
-          redirectTo: "https://dhurgesh1.github.io/plate2purposef/forgot", // page where user will set new password
+          redirectTo: "https://plate2purpose.com/forgot", // page where user will set new password
         });
 
         if (error) {
