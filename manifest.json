@@ -1,27 +1,20 @@
 {
-  "background_color": "#ffffff",
+  "name": "Plate2Purpose",
+  "short_name": "P2P",
   "description": "Plate2Purpose is a platform to reduce food waste in schools.",
-  "dir": "ltr",
-  "display": "standalone",
-  "name": "plate2purpose",
-  "orientation": "any",
-  "scope": "/",
-  "short_name": "plate2purpose",
   "start_url": "/",
-  "theme_color": "#ffffff",
+  "scope": "/",
+  "display": "standalone",
+  "dir": "ltr",
+  "lang": "en",
+  "orientation": "any",
+  "theme_color": "#2E7D32",
+  "background_color": "#ffffff",
   "icons": [
     {
-      "src": "https://plate2purpose.com/images/recycle-sign.png",
-      "type": "image/png",
-      "sizes": "200x200",
-      "isSquare": true,
-      "isPng": true,
-      "isWebp": false,
-      "isJpg": false,
-      "width": 200,
-      "is512x512": false,
-      "is256x256": false,
-      "is192x192": false
+      "src": "https://plate2purpose.com/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ]
 }
