@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -663,7 +663,7 @@
             color: #fff;
             font-weight: 600;
             text-decoration: none;
-            font-family: 'Poppins', sans-serif;
+            font-family: &quot;Poppins&quot;, sans-serif;
             transition: 0.2s;
           "
           >Download Now</a
@@ -696,22 +696,25 @@
         <div class="download-buttons">
           <!-- Windows 11 -->
           <a href="#" class="os-button" onclick="handleDownload('Windows 11')">
-            <span
-              class="os-icon"
-              style="
-                display: inline-block;
-                width: 28px;
-                height: 28px;
-                background: url('https://upload.wikimedia.org/wikipedia/commons/f/fa/windows 11.svg')
-                  no-repeat center/contain;
-              "
-            ></span>
+            <span class="os-icon">
+              <svg
+                width="36"
+                height="36"
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect x="2" y="2" width="20" height="20" fill="#0078D4" />
+                <rect x="26" y="2" width="20" height="20" fill="#0078D4" />
+                <rect x="2" y="26" width="20" height="20" fill="#0078D4" />
+                <rect x="26" y="26" width="20" height="20" fill="#0078D4" />
+              </svg>
+            </span>
+
             <div class="os-text">
               <div class="platform">Download for</div>
               <div class="name">Windows 11</div>
             </div>
             <span class="download-loader"></span>
-            <!-- Loader -->
           </a>
 
           <style>
@@ -724,7 +727,9 @@
               border-radius: 16px;
               background: #ffdab9; /* peach background */
               box-shadow: 0 6px 20px rgba(203, 117, 117, 0.25);
-              transition: transform 0.2s, box-shadow 0.2s;
+              transition:
+                transform 0.2s,
+                box-shadow 0.2s;
             }
             .os-button:hover {
               transform: translateY(-3px);
@@ -740,7 +745,7 @@
                 display: inline-block;
                 width: 28px;
                 height: 28px;
-                background: url('https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg')
+                background: url(&quot;https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg&quot;)
                   no-repeat center/contain;
               "
             ></span>
@@ -756,7 +761,7 @@
             <span
               class="os-icon"
               style="
-                background: url('https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg')
+                background: url(&quot;https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg&quot;)
                   no-repeat center/contain;
                 width: 28px;
                 height: 28px;
@@ -766,6 +771,15 @@
             <div class="os-text">
               <div class="platform">Download for</div>
               <div class="name">Linux</div>
+            </div>
+            <span class="download-loader"></span>
+          </a>
+          <!-- Android -->
+          <a href="#" class="os-button" onclick="handleDownload('Android')">
+            <i class="fab fa-android os-icon" style="color: #3ddc84"></i>
+            <div class="os-text">
+              <div class="platform">Download for</div>
+              <div class="name">Android</div>
             </div>
             <span class="download-loader"></span>
           </a>
