@@ -258,6 +258,41 @@
       }
     </script>
     <script>
+      async function protectPage() {
+        // Load session from URL/local storage
+        await client.auth.getSession();
+    
+        const { data: { user } } = await client.auth.getUser();
+    
+        if (!user) {
+          window.location.href = "admin login.html";
+          return;
+        }
+    
+        const email = user.email;
+    
+        const { data } = await client
+          .from("admins")
+          .select("*")
+          .eq("email", email)
+          .maybeSingle();
+    
+        if (!data) {
+          alert("Access denied");
+          await client.auth.signOut();
+          window.location.href = "admin login.html";
+        } else {
+          // ✅ Only show page if admin
+          document.body.style.display = "block";
+        }
+      }
+    
+      // Hide page initially
+      document.body.style.display = "none";
+    
+      protectPage();
+    </script>
+    <script>
       document.addEventListener("DOMContentLoaded", () => {
         const preloader = document.getElementById("preloader");
         window.addEventListener("load", () => {
