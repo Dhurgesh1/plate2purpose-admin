@@ -6,6 +6,9 @@
   );
 
   async function checkAdmin() {
+    // ✅ Load session from URL (important)
+    await client.auth.getSession();
+
     const { data: { user } } = await client.auth.getUser();
 
     if (!user) {
@@ -15,18 +18,15 @@
 
     const email = user.email;
 
-    // Check if email exists in admins table
-    const { data, error } = await client
+    const { data } = await client
       .from("admins")
       .select("*")
       .eq("email", email)
-      .single();
+      .maybeSingle();
 
     if (data) {
-      // ✅ Admin → go to dashboard
       window.location.href = "admin dashboard.html";
     } else {
-      // ❌ Not admin → block access
       alert("Access denied. You are not an admin.");
       await client.auth.signOut();
       window.location.href = "admin login.html";
