@@ -101,15 +101,15 @@
         "https://wckmybwpastxcxieatcp.supabase.co",
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indja215YndwYXN0eGN4aWVhdGNwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc2MTgyNzAsImV4cCI6MjA5MzE5NDI3MH0.G95zAydPQH3WQxMHlDRjUTIMHbeu7bRODAJQN2mMNCk"
       );
-
+    
       async function loginWithGoogle() {
         const { data, error } = await client.auth.signInWithOAuth({
           provider: "google",
           options: {
-            redirectTo: window.location.origin + "/admin dashboard.html",
+            redirectTo: window.location.origin + "/admin-check.html",
           },
         });
-
+    
         if (error) {
           alert("Login failed: " + error.message);
         }
