@@ -252,21 +252,18 @@
       }
 
       async function banUser(userId, banStatus) {
-        const { error } = await supabaseAdmin.auth.admin.updateUserById(
-          userId,
-          {
-            app_metadata: { banned: banStatus },
-          }
-        );
+        const { error } = await supabaseAdmin.auth.admin.updateUserById(userId, {
+          ban_duration: banStatus ? "876000h" : "none" // ~100 years ban
+        });
+      
         if (error) {
           alert("Error updating ban status: " + error.message);
           return;
         }
+      
         alert(banStatus ? "User banned" : "User unbanned");
         loadUsers();
       }
-
-      document.addEventListener("DOMContentLoaded", loadUsers);
     </script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
