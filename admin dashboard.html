@@ -254,7 +254,7 @@
 
       async function logout() {
         await client.auth.signOut();
-        window.location.href = "admin login.html";
+        window.location.href = "index.html";
       }
     </script>
     <script>
@@ -265,7 +265,7 @@
         const { data: { user } } = await client.auth.getUser();
     
         if (!user) {
-          window.location.href = "admin login.html";
+          window.location.href = "index.html";
           return;
         }
     
@@ -280,7 +280,7 @@
         if (!data) {
           alert("Access denied");
           await client.auth.signOut();
-          window.location.href = "admin login.html";
+          window.location.href = "index.html";
         } else {
           // ✅ Only show page if admin
           document.body.style.display = "block";
